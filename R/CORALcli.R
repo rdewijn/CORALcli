@@ -752,7 +752,7 @@ writekinasetree <- function(svginfo,destination,font,labelselect,groupcolor)
 make_empty_tree <- function() {
  require(readr)
  orig_svginfo <- readRDS(system.file("extdata", "kintree.RDS", package = "CORALcli"))
- orig_svginfo$dataframe <- data.frame(read_tsv(system.file("extdata", "coral_dataframe.tsv", package = "CORALcli")))
+ orig_svginfo$dataframe <- data.frame(read_tsv(system.file("extdata", "coral_dataframe.tsv", package = "CORALcli"), show_col_types = FALSE))
  NAs = which(is.na(orig_svginfo$dataframe$kinase.subfamily))
  orig_svginfo$dataframe$kinase.subfamily[NAs] = ""
 
@@ -896,6 +896,8 @@ make_tree_data <- function(df, min_col, max_col) {
 #' Make coral tree SVG
 #'
 #' @param df
+#' @param comparison
+#' @param tree_dir
 #' @param min_col
 #' @param max_col
 #' @param png
