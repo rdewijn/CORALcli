@@ -902,7 +902,7 @@ make_tree_data <- function(df, min_col, max_col) {
 #' @param max_col
 #' @param png
 #'
-#' @return tree
+#' @return saved file location
 #' @import magick rsvg stringr
 #' @export
 plot_tree <- function(df, comparison, tree_dir, min_col, max_col, png=FALSE) {
@@ -927,5 +927,6 @@ plot_tree <- function(df, comparison, tree_dir, min_col, max_col, png=FALSE) {
  #  img <- magick::image_read_svg(svg_file, width = 4000, height = 4000)
  #  magick::image_write(img, png_file, format = "png", flatten = FALSE, density = pngDPI)
  # }
+ return(svg_file)
 }
 
