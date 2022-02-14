@@ -903,7 +903,7 @@ make_tree_data <- function(df, min_col, max_col) {
 #' @return tree
 #' @import magick rsvg stringr
 #' @export
-plot_tree <- function(df, comparison, min_col, max_col, png=FALSE) {
+plot_tree <- function(df, comparison, tree_dir, min_col, max_col, png=FALSE) {
  require(magick)
  require(rsvg)
  require(stringr)
@@ -914,7 +914,7 @@ plot_tree <- function(df, comparison, min_col, max_col, png=FALSE) {
  new_tree$legend <- dfandlegend[[2]]
 
  tree_file <- paste0(comparison, "_CORAL.svg")
- svg_file <- paste0("99_Saved Plots/",tree_file)
+ svg_file <- paste0(tree_dir, "/",tree_file)
 
  if (!dir.exists(dirname(svg_file))) {
   dir.create(dirname(svg_file), showWarnings = F)
