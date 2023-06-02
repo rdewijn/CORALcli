@@ -811,7 +811,7 @@ make_tree_data <- function(df, min_col, max_col) {
 
  kinaseData <- df
  # Threshold final score
- kinaseData <- kinaseData %>% filter(`Median Final score` > 1.2)
+ kinaseData <- kinaseData %>% filter(`Median Final score` > 1.3)
  kinaseNodeSize <- kinaseData %>% select(`Kinase Uniprot ID`, `Median Final score`) %>% as.data.frame(.)
  kinaseNodeColor <- kinaseData %>% select(`Kinase Uniprot ID`, `Median Kinase Statistic`) %>% as.data.frame(.)
 
