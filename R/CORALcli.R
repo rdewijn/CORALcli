@@ -921,7 +921,7 @@ plot_tree <- function(df, comparison, tree_dir, min_col, max_col, png=FALSE) {
  if (!dir.exists(dirname(svg_file))) {
   dir.create(dirname(svg_file), showWarnings = F)
  }
- tree <- writekinasetree(new_tree, destination = svg_file, font = "Helvetica", labelselect = "Default", groupcolor = "#000000")
+ tree <- writekinasetree(new_tree, destination = svg_file, font = "Helvetica", labelselect = "HGNC", groupcolor = "#000000")
  # if (png == TRUE) {
  #  pngDPI <- 300
  #  img <- magick::image_read_svg(svg_file, width = 4000, height = 4000)
